@@ -1,0 +1,28 @@
+# Obsidian per-device state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace-mobile.json.bak
+.obsidian/cache/
+.obsidian/community-plugins.json.bak
+
+# Plugin code (users install via marketplace; we only commit data.json settings)
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/manifest.json
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/.hotreload
+
+# Themes (licensed separately — install via marketplace)
+.obsidian/themes/*/
+
+# Obsidian trash
+.trash/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Local Claude Code per-vault settings
+.claude/
+
+# Personal scratch (user-defined)
+private/

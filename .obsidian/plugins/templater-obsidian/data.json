@@ -1,0 +1,59 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "_meta/templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "01-Daily/daily",
+      "template": "_meta/templates/daily.md"
+    },
+    {
+      "folder": "01-Daily/weekly",
+      "template": "_meta/templates/weekly.md"
+    },
+    {
+      "folder": "01-Daily/monthly",
+      "template": "_meta/templates/monthly.md"
+    },
+    {
+      "folder": "10-Areas/health/metrics",
+      "template": "_meta/templates/health-metrics.md"
+    },
+    {
+      "folder": "10-Areas/finance/monthly",
+      "template": "_meta/templates/finance-monthly.md"
+    }
+  ],
+  "enable_file_templates": false,
+  "file_templates": [
+    {
+      "regex": ".*",
+      "template": ""
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    ""
+  ],
+  "startup_templates": [
+    ""
+  ],
+  "intellisense_render": 1,
+  "ignore_folders_on_creation": [
+    {
+      "folder": ""
+    }
+  ]
+}

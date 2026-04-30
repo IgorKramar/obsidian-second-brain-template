@@ -1,0 +1,15 @@
+{
+  "dateFormat": "yyyy-MM-dd'T'HH:mm",
+  "enableCreateTime": true,
+  "headerUpdated": "updated",
+  "headerCreated": "created",
+  "minMinutesBetweenSaves": 1,
+  "ignoreGlobalFolder": [],
+  "ignoreCreatedFolder": [],
+  "enableExperimentalHash": false,
+  "fileHashMap": {
+    "10-Areas/work.md": "821644204c94685525b8f274a1ea6693dfb2c276bd6141adfc9929b198a9c3a6"
+  },
+  "enableFrontmatterUpdate": true,
+  "useKeyupEvents": false
+}

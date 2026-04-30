@@ -1,0 +1,236 @@
+{
+  "choices": [
+    {
+      "id": "3545c374-d449-41ef-9a70-8ef8be20499f",
+      "name": "Quick Idea",
+      "type": "Template",
+      "command": true,
+      "templatePath": "_meta/templates/idea.md",
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "idea-{{DATE:YYYY-MM-DD-HHmm}}"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFile": false,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
+    },
+    {
+      "id": "a5884dc9-e7e0-41d7-a0dc-ffb7a84f85c8",
+      "name": "Quick fleeting",
+      "type": "Capture",
+      "command": true,
+      "appendLink": false,
+      "captureTo": "00-Inbox/fleeting.md",
+      "captureToActiveFile": false,
+      "captureToCanvasNodeId": "",
+      "activeFileWritePosition": "cursor",
+      "createFileIfItDoesntExist": {
+        "enabled": true,
+        "createWithTemplate": false,
+        "template": ""
+      },
+      "format": {
+        "enabled": true,
+        "format": "{{DATE:YYYY-MM-DD HH:mm}} — {{VALUE}}"
+      },
+      "insertAfter": {
+        "enabled": false,
+        "after": "",
+        "insertAtEnd": false,
+        "considerSubsections": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top",
+        "inline": false,
+        "replaceExisting": false,
+        "blankLineAfterMatchMode": "auto"
+      },
+      "newLineCapture": {
+        "enabled": false,
+        "direction": "below"
+      },
+      "prepend": false,
+      "task": false,
+      "openFile": false,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "templater": {
+        "afterCapture": "none"
+      }
+    },
+    {
+      "id": "07e6f9bf-02b3-4b3d-9e2a-a28d3812d44b",
+      "name": "Quick task",
+      "type": "Capture",
+      "command": true,
+      "appendLink": false,
+      "captureTo": "00-Inbox/tasks.md",
+      "captureToActiveFile": false,
+      "captureToCanvasNodeId": "",
+      "activeFileWritePosition": "cursor",
+      "createFileIfItDoesntExist": {
+        "enabled": true,
+        "createWithTemplate": false,
+        "template": ""
+      },
+      "format": {
+        "enabled": true,
+        "format": "[ ] {{VALUE}} (added {{DATE:YYYY-MM-DD HH:mm}})"
+      },
+      "insertAfter": {
+        "enabled": false,
+        "after": "",
+        "insertAtEnd": false,
+        "considerSubsections": false,
+        "createIfNotFound": false,
+        "createIfNotFoundLocation": "top",
+        "inline": false,
+        "replaceExisting": false,
+        "blankLineAfterMatchMode": "auto"
+      },
+      "newLineCapture": {
+        "enabled": false,
+        "direction": "below"
+      },
+      "prepend": false,
+      "task": false,
+      "openFile": false,
+      "fileOpening": {
+        "location": "tab",
+        "direction": "vertical",
+        "mode": "default",
+        "focus": true
+      },
+      "templater": {
+        "afterCapture": "none"
+      }
+    }
+  ],
+  "inputPrompt": "single-line",
+  "persistInputPromptDrafts": true,
+  "useSelectionAsCaptureValue": true,
+  "devMode": false,
+  "templateFolderPath": "_meta/templates",
+  "announceUpdates": "none",
+  "version": "2.12.0",
+  "globalVariables": {},
+  "onePageInputEnabled": false,
+  "disableOnlineFeatures": true,
+  "enableRibbonIcon": false,
+  "showCaptureNotification": true,
+  "showInputCancellationNotification": false,
+  "enableTemplatePropertyTypes": false,
+  "dateAliases": {
+    "t": "today",
+    "tm": "tomorrow",
+    "yd": "yesterday",
+    "nw": "next week",
+    "nm": "next month",
+    "ny": "next year",
+    "lw": "last week",
+    "lm": "last month",
+    "ly": "last year"
+  },
+  "ai": {
+    "defaultModel": "",
+    "providers": [
+      {
+        "name": "OpenAI",
+        "endpoint": "https://api.openai.com/v1",
+        "apiKey": "",
+        "models": [
+          {
+            "name": "gpt-3.5-turbo",
+            "maxTokens": 4096
+          },
+          {
+            "name": "gpt-3.5-turbo-16k",
+            "maxTokens": 16384
+          },
+          {
+            "name": "gpt-3.5-turbo-1106",
+            "maxTokens": 16385
+          },
+          {
+            "name": "gpt-4",
+            "maxTokens": 8192
+          },
+          {
+            "name": "gpt-4-32k",
+            "maxTokens": 32768
+          },
+          {
+            "name": "gpt-4-1106-preview",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4-turbo",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4o",
+            "maxTokens": 128000
+          },
+          {
+            "name": "gpt-4o-mini",
+            "maxTokens": 128000
+          }
+        ],
+        "autoSyncModels": false,
+        "modelSource": "modelsDev"
+      },
+      {
+        "name": "Gemini",
+        "endpoint": "https://generativelanguage.googleapis.com",
+        "apiKey": "",
+        "models": [
+          {
+            "name": "gemini-1.5-pro",
+            "maxTokens": 1000000
+          },
+          {
+            "name": "gemini-1.5-flash",
+            "maxTokens": 1000000
+          },
+          {
+            "name": "gemini-1.5-flash-8b",
+            "maxTokens": 1000000
+          }
+        ],
+        "autoSyncModels": false,
+        "modelSource": "modelsDev"
+      }
+    ]
+  },
+  "migrations": {
+    "migrateToMacroIDFromEmbeddedMacro": true,
+    "useQuickAddTemplateFolder": true,
+    "incrementFileNameSettingMoveToDefaultBehavior": true,
+    "mutualExclusionInsertAfterAndWriteToBottomOfFile": true,
+    "setVersionAfterUpdateModalRelease": true,
+    "addDefaultAIProviders": true,
+    "removeMacroIndirection": true,
+    "migrateFileOpeningSettings": true,
+    "backfillFileOpeningDefaults": true,
+    "setProviderModelDiscoveryMode": true,
+    "migrateProviderApiKeysToSecretStorage": true
+  },
+  "macros": []
+}
