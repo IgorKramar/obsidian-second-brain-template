@@ -1,90 +1,106 @@
-# Obsidian Second Brain Template
+<div align="center">
 
-A personal "second brain" Obsidian vault template — folder structure, frontmatter conventions, 20 ready Templater templates, weekly/monthly review rituals, and an AI-context starter pack for feeding stable context into LLM sessions.
+# Obsidian Second Brain
 
-> Built and used by [@IgorKramar](https://github.com/IgorKramar). Public template; the live private vault is separate. Improvements occasionally backported here by hand.
+**English** · [Русский](README.ru.md)
 
-## Why this exists
+### Capture. Connect. Review.
 
-Most "second brain" advice is either too philosophical (Zettelkasten purity) or too narrow (one specific app's tutorial). This template is opinionated middle ground: enough structure that you start using it on day one, light enough that you don't drown in meta-work.
+20 note templates · periodic reviews · a portable Markdown vault
 
-## What's inside
+[![MIT](https://img.shields.io/badge/license-MIT-9ece6a?style=flat-square)](LICENSE)
+![Obsidian](https://img.shields.io/badge/Obsidian-7C3AED?style=flat-square&logo=obsidian&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white)
+![Templater](https://img.shields.io/badge/templates-Templater-7aa2f7?style=flat-square)
 
-```
-.
-├── 00-Inbox/                # fleeting notes, ideas, quick captures
-├── 01-Daily/                # daily / weekly / monthly notes (Periodic Notes)
-├── 10-Areas/                # ongoing life domains (work, health, family, finance, …)
-├── 20-Projects/             # things with a deadline or done-state
-├── 30-Resources/            # Zettelkasten zone — atomic notes + topical MOCs
-├── 40-People/               # CRM-style notes on people
-├── 50-Reference/            # cheatsheets, snippets, recipes
-├── 90-Archive/              # closed and put away
-├── _ai-context/             # starter packs for Claude/LLM sessions
-└── _meta/
-    ├── conventions.md       # frontmatter, naming, tag rules
-    ├── rituals.md           # daily/weekly/monthly/quarterly review cadence
-    ├── philosophy.md        # 11 principles behind the structure
-    └── templates/           # 20 Templater templates
-```
+[Start](#get-started) · [Layout](#vault-layout) · [Rituals](#daily-use) · [Context](#context-starter-pack) · [Guides](#guides)
+
+</div>
+
+A personal knowledge vault with enough structure to use on day one: frontmatter conventions, reusable notes, project and life areas, and weekly/monthly reviews. Linking comes first; folders provide broad buckets and tags add facets.
+
+This is a **public template**, separate from the author's private vault. Improvements are occasionally backported manually. The entry documentation is available in English and Russian; included notes and templates use both languages.
 
 ## Get started
 
-1. Clone:
-   ```bash
+1. Clone the template:
+
+   ```sh
    git clone https://github.com/IgorKramar/obsidian-second-brain-template.git my-vault
    cd my-vault
+   git remote remove origin
    ```
-2. Open as a vault in Obsidian (`File → Open vault → Open folder as vault`).
-3. Trust the author and enable community plugins (Obsidian will prompt).
-4. Install the recommended plugins from `community-plugins.json`. Each one's `data.json` is already pre-configured.
 
-   Recommended plugins (install through Settings → Community plugins → Browse):
+   Removing the template remote keeps a future push from targeting this public repository. If you want Git sync, add **your own private repository** before recording personal information.
 
-   - Templater
-   - Periodic Notes
-   - Dataview
-   - Update time on edit
-   - Folder notes
-   - Tasks
-   - Calendar
-   - Tag Wrangler
-   - Advanced Tables
-   - Linter
-   - Obsidian Git
-   - QuickAdd
-   - Omnisearch (optional, replaces built-in search)
+2. Open `my-vault` in Obsidian with **Open folder as vault**.
+3. Review the included configuration, then enable community plugins if you trust it. Install plugins through **Settings → Community plugins → Browse**; plugin code is not bundled.
+4. Use the recommended plugin list below. Settings are included for most plugins in [.obsidian/plugins/](.obsidian/plugins/).
+5. Set Folder Notes storage to **In the parent folder**. Periodic Notes has Daily/Weekly/Monthly folders configured; leave its template fields empty to use the included Templater folder mappings. Avoid applying the same template twice.
+6. Fill in [personal context](10-Areas/personal-context.md), [strategy](10-Areas/strategy.md) and [family](10-Areas/family.md); these are deliberately blank scaffolds.
+7. Choose any theme you like; no theme files are included. The author's original preference is Obsidian gruvbox.
 
-5. Set Folder Notes "Storage location" to **In the parent folder**.
-6. Periodic Notes — enable Daily/Weekly/Monthly, point each at `_meta/templates/{daily,weekly,monthly}.md` (or leave the template field empty and let Templater handle it via folder templates — see `_meta/philosophy.md`).
-7. Fill in your own `10-Areas/personal-context.md`, `strategy.md`, and `family.md`. The scaffolds are intentionally empty.
-8. Optional: install a theme you like (the original author uses Obsidian gruvbox).
+<details>
+<summary><strong>Recommended community plugins</strong></summary>
 
-## How to use
+The exact IDs are in [community-plugins.json](.obsidian/community-plugins.json).
 
-- **Daily** (5–7 min, evening) — fill the daily note, drop into `health/metrics/<date>.md` whatever metrics you care about
-- **Weekly work** (Friday, 15–20 min) — review the week, refresh `_ai-context/work-current-week.md`
-- **Weekly health** (Sunday, 10 min) — review metrics, refresh `_ai-context/current-focus.md` for the next week
-- **Monthly** (last day of month, 30 min) — monthly note + finance summary in `10-Areas/finance/monthly/`
-- **Quarterly** (e.g. Aug 1, Nov 1) — re-read `strategy.md`, decide what holds and what changes
+| Purpose | Plugins |
+|:---|:---|
+| Notes and dates | Templater, Periodic Notes, Calendar, Folder notes |
+| Queries and tasks | Dataview, Tasks |
+| Editing | Update time on edit, Advanced Tables, Linter, Tag Wrangler |
+| Capture and search | QuickAdd, Omnisearch (optional alternative to built-in search) |
+| Version history | Obsidian Git |
 
-The full review schedule lives in `_meta/rituals.md` as recurring Tasks-plugin entries.
+Obsidian Git's included configuration enables automatic commits every 10 minutes and pull on startup. Automatic push has an interval of zero, but manual push is enabled. Review the settings and repository destination before using it with personal notes.
 
-## AI context starter pack
+</details>
 
-`_ai-context/claude-starter.md` is a wrapper that uses Obsidian transclusion (`![[file]]`) to embed your `personal-context`, `strategy`, current focus, and current work week into one document. Open it in Read view, copy the rendered output, paste into a new Claude/LLM session — the model now knows who you are.
+## Vault layout
 
-## Philosophy
+| Path | What goes here |
+|:---|:---|
+| [00-Inbox/](00-Inbox/) | Fleeting notes and quick captures |
+| [01-Daily/](01-Daily/) | Daily, weekly and monthly notes |
+| [10-Areas/](10-Areas/) | Ongoing work, health, family and finance |
+| [20-Projects/](20-Projects/) | Work with a deadline or a done-state |
+| [30-Resources/](30-Resources/) | Atomic knowledge notes and maps of content |
+| [40-People/](40-People/) | Notes about people |
+| [50-Reference/](50-Reference/) | Cheatsheets, recipes and snippets |
+| [90-Archive/](90-Archive/) | Completed or inactive material |
+| [_ai-context/](_ai-context/) | Context packs for language-model sessions |
+| [_meta/](_meta/) | Conventions, rituals and 20 Templater templates |
 
-See `_meta/philosophy.md`. Short version:
+Use wikilinks to connect ideas. Add frontmatter for Dataview queries. Keep knowledge notes atomic and useful beyond a single project; grow the structure only when your notes need it.
 
-- Linking > folders > tags
-- Minimum structure on start, grow when it hurts
-- Atomic + evergreen for knowledge (Zettelkasten in `30-Resources/`)
-- Frontmatter everywhere — for Dataview queries
-- Daily note takes 5 minutes, not 25
-- Sync via your own private Git repo
+## Daily use
+
+| Rhythm | Suggested practice |
+|:---|:---|
+| Daily · 5–7 minutes | Fill in the daily note; optionally record health metrics in `10-Areas/health/metrics/` |
+| Friday · 15–20 minutes | Review the work week and update `_ai-context/work-current-week.md` |
+| Sunday · 10 minutes | Review health and update `_ai-context/current-focus.md` |
+| Month end · 30 minutes | Monthly review and finance summary in `10-Areas/finance/monthly/` |
+| Quarterly | Revisit `10-Areas/strategy.md` and adjust your direction |
+
+The [ritual guide](_meta/rituals.md) includes the detailed schedule and recurring Tasks entries. The cadence is a starting point; adapt it to your life.
+
+## Context starter pack
+
+The [starter document](_ai-context/claude-starter.md) uses Obsidian transclusion (`![[file]]`) to assemble personal context, strategy, current focus and the work week. Open it in Reading view and copy the rendered text into a new language-model session when useful.
+
+Review the rendered content before sharing it: the finished vault can contain private family, health, finance or work information. Sharing a context pack is an explicit action, not part of vault synchronization.
+
+## Guides
+
+| Document | Language | Covers |
+|:---|:---|:---|
+| [Conventions](_meta/conventions.md) | Russian | Frontmatter, note types, naming and tags |
+| [Philosophy](_meta/philosophy.md) | English | Eleven principles behind the layout |
+| [Rituals](_meta/rituals.md) | Russian | Review steps and recurring tasks |
+| [Templates](_meta/templates/) | Mixed EN/RU | Daily notes, projects, people, books, decisions and more |
 
 ## License
 
-MIT — do whatever you want, no warranty. See `LICENSE`.
+[MIT](LICENSE) · Igor Kramar. Third-party Obsidian plugins retain their own licenses.
